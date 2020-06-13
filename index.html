@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Light Bulb</title>    
+<style>
+h1{
+  text-align: center;
+margin-top: 40px;
+text-transform: uppercase;
+    } 
+    .lightapp{
+        width: 100%;
+        height: 80vh;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+figcaption
+    {
+        text-align: center;
+    }
+    .slider{
+        position: absoulte;
+        cursor: pointer;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: brown;
+        -webkit-transition: .4s;
+       transition: .4s;
+    }
+    .onoffbtn{
+    width: 100%;
+     margin-top: -50px; 
+     display: flex;
+    justify-content: center;
+    align-items: center;    
+    }
+</style> 
+</head>
+<body>
+<h1 id="bulbdata">LIGHT ON OFF</h1>   
+<br>
+<main class="lightapp">
+<figure class="lightstyle">
+ <img src="lightoff.jpg" id="lightid1" >
+
+<figcaption>
+<p> Light ON OFF</p>
+</figcaption>
+</figure>
+<figure class="lightstyle">
+ <img src="lightoff.jpg" id="lightid2" onclick="tubelight()">
+
+<figcaption>
+<p> Light ON OFF</p>
+</figcaption>
+</figure>
+    <figure class="lightstyle">
+ <img src="lightoff.jpg" id="lightid3" onclick="tubelight()">
+
+<figcaption>
+<p> Light ON OFF</p>
+</figcaption>
+</figure>
+    <figure class="lightstyle">
+ <img src="lightoff.jpg" id="lightid4" onclick="tubelight()">
+
+<figcaption>
+<p> Light ON OFF</p>
+</figcaption>
+</figure>
+    <figure class="lightstyle">
+ <img src="lightoff.jpg" id="lightid5" onclick="tubelight()">
+<figcaption>
+<p> Light ON OFF</p>
+</figcaption>
+</figure>
+</main>
+<div class="onoffbtn">
+<label class="switch">
+    
+
+<input type="checkbox" onclick="tubelight()"><span class="slider"></span>
+ </label>   
+</div>
+<script>
+function tubelight(){
+var btext=document.getElementById("bulbdata");
+for(var x=1;x<6;x++){
+var bid=document.getElementById("lightid".concat(x));
+if(bid.src.match("lighton.jpg")){
+    bid.src="lightoff.jpg";
+btext.innerHTML="Light OFF";
+
+}
+    else{
+        bid.src="lighton.jpg";
+    btext.innerHTML="Light ON";
+    btext.style.color="Red";
+    }
+}
+}
+ 
+    
+    
+</script>
+    
+  
+</body>
+
+</html>
